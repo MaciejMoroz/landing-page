@@ -119,3 +119,9 @@ button {
     display: unset;
   }
 }
+.hide-tab {
+  display: none;
+  @include max-media($bpoint-tab) {
+    display: unset;
+  }
+}

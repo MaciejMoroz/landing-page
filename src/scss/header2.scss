@@ -1,0 +1,196 @@
+.header {
+  position: relative;
+  width: 100%;
+  min-width: $cont-min-width;
+  height: $space-1;
+  background-color: $color-4;
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $font-size-h4;
+    color: $color-9;
+    font-weight: $fw-bold;
+    @include min-media($bpoint-tab) {
+      left: $space-1;
+    }
+  }
+  &__avatar {
+    position: absolute;
+    top: 12px;
+    right: $base-unit;
+    transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+
+    &:hover {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5);
+    }
+
+    img {
+      width: $base-unit;
+      height: $base-unit;
+    }
+  }
+}
+.nav {
+  position: absolute;
+  top: 0;
+  left: -350px;
+  width: 287px;
+  min-width: 287px;
+  height: auto;
+  min-height: 100vh;
+  background-color: $color-4;
+  box-shadow: 20px 0 30px rgba($black, 0.6);
+  transition: 0.3s;
+  .open-menu & {
+    left: 0;
+    transition: 0.3s;
+  }
+  @include min-media($bpoint-tab) {
+    left: auto;
+    padding: 9px 0;
+    min-height: unset;
+    box-shadow: none;
+    background-color: unset;
+    width: 600px;
+    right: 40px;
+  }
+
+  &__logo {
+    margin: $space-1;
+    text-transform: uppercase;
+    font-size: $font-size-h4;
+    color: $color-9;
+    font-weight: $fw-bold;
+    @include min-media($bpoint-tab) {
+      display: none;
+    }
+  }
+  &__el {
+    @include min-media($bpoint-tab) {
+      margin: 0 $space-3;
+      float: left;
+    }
+
+    &__txt,
+    &__icon {
+      display: inline-block;
+      cursor: pointer;
+    }
+    &__txt {
+      text-transform: uppercase;
+      font-size: $font-size-h4;
+    }
+    &__icon {
+      width: $base-unit;
+      height: $base-unit;
+      margin: $space-1 $space-3 0 $space-1;
+      svg {
+        fill: $color-11;
+        fill-rule: evenodd;
+      }
+      @include min-media($bpoint-tab) {
+        display: none;
+      }
+
+      &--avatar {
+        border-radius: 50%;
+        transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+        margin-bottom: $space-1;
+      }
+    }
+    &--avatar {
+      @include min-media($bpoint-tab) {
+        .nav__el__txt {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.sub-nav {
+  @include min-media($bpoint-tab) {
+    // position: absolute;
+    // border-radius: 0 0 6px 6px;
+    // display: inline-block;
+    // text-align: center;
+  }
+
+  &__el {
+    @include min-media($bpoint-tab) {
+      padding: $space-3;
+    }
+    &:hover {
+      font-weight: $fw-bold;
+    }
+    margin: $space-3 0 $space-3 $space-3 * 5;
+    @include min-media($bpoint-tab) {
+      margin: 0;
+      background-color: $color-4;
+    }
+    &--second-lvl {
+      margin-left: $space-3 * 6;
+      &:first {
+        margin-top: 0;
+      }
+      @include min-media($bpoint-tab) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.colapse-itm {
+  display: block;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  @include min-media($bpoint-tab) {
+    width: auto;
+  }
+}
+.active {
+  transition: all 0.3s ease-out;
+  height: 100%;
+}
+.hamburger {
+  position: absolute;
+  top: $space-3 * 0.5;
+  left: $base-unit;
+  width: $space-1;
+  height: $space-1;
+  cursor: pointer;
+  @media (min-width: $bpoint-tab) {
+    display: none;
+  }
+  span {
+    display: block;
+    background-color: $black;
+    width: $base-unit;
+    height: 2px;
+    margin: 3px;
+    transition: 0.3s;
+
+    &:nth-child(2) {
+      width: $base-unit * 0.6875;
+      transition: 0.1s;
+    }
+    .open-menu &:nth-child(2) {
+      visibility: hidden;
+    }
+    .open-menu &:nth-child(1) {
+      transform: rotate(45deg) translate(0, 7px);
+      transition: 0.3s;
+    }
+    .open-menu &:nth-child(3) {
+      transform: rotate(-45deg) translate(0, -7px);
+      transition: 0.3s;
+    }
+  }
+}
