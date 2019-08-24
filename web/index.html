@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -9,6 +9,10 @@
 
     <title></title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
+    />
   </head>
 
   <body>
@@ -166,7 +170,45 @@
     <span></span>
   </div>
 </header>
+ <section class="hero">
+  <div class="hero__img"></div>
+  <div class="hero__content">
+    <div class="wrapper">
+      <h2 class="hero__content__hdr">WORLD NEWS</h2>
+      <span class="line"></span>
+      <h2 class="hero__content__subtitle">
+        Amazing places in America to visit.
+      </h2>
+      <p class="hero__content__txt">
+        For some reason — this country, this city, this neighborhood, this
+        particular street —  is the place you are living a majority of your life
+        in.
+      </p>
+      <button class="btn btn--primary">learn more</button>
+    </div>
+  </div>
+
+  <div class="slider">
+    <div class="component">
+      <div class="wrapper">
+        <div class="slider__hdr"></div>
+        <h2 class="slider__hdr__txt">WORLD NEWS</h2>
+        <div class="slider__hdr__btn">
+          <div class="swiper-button--next">next</div>
+          <div class="swiper-button--prev">prev</div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <script src="js/app.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   </body>
 </html>

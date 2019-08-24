@@ -2,8 +2,9 @@
   position: relative;
   width: 100%;
   min-width: $cont-min-width;
-  height: $space-1;
+  height: 40px;
   background-color: $color-4;
+  z-index: 9999;
 
   &__logo {
     position: absolute;
