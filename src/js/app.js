@@ -2,8 +2,6 @@ const BODY = this.document.querySelector("body"),
   btn_menu = this.document.querySelector("[data-menu-btn]"),
   coll = document.getElementsByClassName("colapse");
 
-
-
 // hamburger menu
 btn_menu.onclick = () => {
   BODY.classList.toggle('open-menu')
@@ -15,4 +13,5 @@ for (i = 0; i < coll.length; i++) {
       content.classList.toggle("active");
     }
   });
+
 }
