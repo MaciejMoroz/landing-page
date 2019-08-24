@@ -57,7 +57,7 @@
     min-height: unset;
     box-shadow: none;
     background-color: unset;
-    width: 600px;
+    width: auto;
     right: 40px;
   }
 
@@ -73,7 +73,7 @@
   }
   &__el {
     @include min-media($bpoint-tab) {
-      margin: 0 $space-3;
+      margin: 0 $space-3 0 0;
       float: left;
     }
 
@@ -115,10 +115,9 @@
 }
 .sub-nav {
   @include min-media($bpoint-tab) {
-    // position: absolute;
-    // border-radius: 0 0 6px 6px;
-    // display: inline-block;
-    // text-align: center;
+    position: absolute;
+    border-radius: 0 0 6px 6px;
+    display: inline-block;
   }
 
   &__el {
@@ -139,7 +138,18 @@
         margin-top: 0;
       }
       @include min-media($bpoint-tab) {
-        margin: 0;
+        position: relative;
+        margin-left: $space-1;
+        width: 200px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -$space-1;
+          width: $space-1;
+          height: $space-1 + $space-3 + 3px;
+          background-color: $color-4;
+        }
       }
     }
   }
@@ -150,14 +160,20 @@
   width: 100%;
   height: 0px;
   overflow: hidden;
-  transition: all 0.3s ease-out;
+  transition: height 1s ease-in;
   @include min-media($bpoint-tab) {
-    width: auto;
+    width: 200px;
   }
 }
 .active {
-  transition: all 0.3s ease-out;
   height: 100%;
+
+  @include min-media($bpoint-tab) {
+    min-height: 100px;
+    height: auto;
+    margin-left: -$base-unit;
+    width: 200px;
+  }
 }
 .hamburger {
   position: absolute;

@@ -3,31 +3,16 @@ const BODY = this.document.querySelector("body"),
   coll = document.getElementsByClassName("colapse");
 
 
+
 // hamburger menu
 btn_menu.onclick = () => {
   BODY.classList.toggle('open-menu')
 }
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
-
     const content = this.nextElementSibling;
     if (content.clientHeight = "0px") {
       content.classList.toggle("active");
-    } else {
-      this.classList.toggle("unactive");
     }
   });
 }
-
-
-// for (i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function () {
-
-//     const content = this.nextElementSibling;
-//     if (content.clientHeight = "0px") {
-//       content.classList.toggle("active");
-//     } else {
-//       this.classList.toggle("unactive");
-//     }
-//   });
-// }
