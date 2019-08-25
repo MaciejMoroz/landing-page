@@ -16,7 +16,10 @@
   </head>
 
   <body>
-    {% include "components/header.html" %} {% include "components/hero.html" %}
+    {% include "components/header.html" %}
+    <div class="flex-box">
+      {% include "components/hero.html" %}{% include "components/news.html" %}
+    </div>
     <script src="js/app.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   </body>
