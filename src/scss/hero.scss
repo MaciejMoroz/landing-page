@@ -30,6 +30,8 @@
         @include min-media($bpoint-desklg) {
           padding-top: 132.5px;
           padding-bottom: 132.5px;
+          margin-left: calc(25vw - 150px);
+          margin-right: calc(25vw - 150px);
         }
 
         &__hdr {
@@ -63,18 +65,12 @@
         overflow: hidden;
         width: 100%;
         height: 100%;
-        // padding-bottom: 103.43%;
         background-image: url("../img/hero/hero-375.png");
         @include min-media($bpoint-tab) {
           background-image: url("../img/hero/hero-768.png");
-          // padding-bottom: 52%;
-          // max-height: 400px;
         }
         @include min-media($bpoint-desk) {
           background-image: url("../img/hero/hero-840.png");
-          // padding-bottom: auto;
-          // height: 600px;
-          // max-height: unset;
         }
         @include min-media($bpoint-desklg) {
           background-image: url("../img/hero/hero-1220.png");

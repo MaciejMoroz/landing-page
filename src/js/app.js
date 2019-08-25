@@ -3,7 +3,7 @@ const BODY = this.document.querySelector("body"),
   coll = document.getElementsByClassName("colapse");
 
 // hamburger menu
-btn_menu.onclick = () => {
+btn_menu.onclick = function () {
   BODY.classList.toggle('open-menu')
 }
 for (i = 0; i < coll.length; i++) {
@@ -16,7 +16,7 @@ for (i = 0; i < coll.length; i++) {
 
 }
 window.onload = function () {
-  var mySwiper = new Swiper(".swiper-container", {
+  var newsSwiper = new Swiper(".news-swiper", {
     direction: "horizontal",
     loop: true,
 
@@ -25,8 +25,21 @@ window.onload = function () {
       clickable: true
     },
     navigation: {
-      nextEl: ".swiper-button--next",
-      prevEl: ".swiper-button--prev"
+      nextEl: ".news-btn-next",
+      prevEl: ".news-btn-prev"
+    }
+  });
+  var trendingSwiper = new Swiper(".trending-swiper", {
+    direction: "horizontal",
+    loop: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".trending-btn-next",
+      prevEl: ".trending-btn-prev"
     }
   });
 };

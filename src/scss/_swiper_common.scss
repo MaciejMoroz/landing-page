@@ -1,0 +1,206 @@
+.bg--white {
+  background-color: $white;
+}
+
+.slider-box {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  &--news {
+    @include min-media($bpoint-desk) {
+      width: 42%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    @include min-media($bpoint-desklg) {
+      width: 32%;
+    }
+  }
+  .slider {
+    width: 100%;
+    height: auto;
+    color: $color-1;
+    &--news {
+      @include min-media($bpoint-desk) {
+        max-width: 380px;
+        .wrapper {
+          padding: 0;
+        }
+      }
+    }
+
+    &__hdr {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      &__txt {
+        display: inline-block;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+      }
+      &__btn {
+        display: inline-block;
+        fill: $color-11;
+        .swiper-button {
+          cursor: pointer;
+          &--next,
+          &--prev {
+            cursor: pointer;
+            display: inline-block;
+            &:hover {
+              fill: $color-1;
+            }
+          }
+          &--prev {
+            padding: 0 $space-1 0 0;
+            @media all and (-ms-high-contrast: none),
+              (-ms-high-contrast: active) {
+              //  IE10+ CSS styles
+              &::before {
+                content: "";
+                display: inline-block;
+                width: 6px;
+                height: 10px;
+                background-image: url("../img/news/arrow-prev.svg");
+                background-repeat: no-repeat;
+              }
+            }
+          }
+          &--next {
+            padding: 0 0 0 $space-1;
+            @media all and (-ms-high-contrast: none),
+              (-ms-high-contrast: active) {
+              //  IE10+ CSS styles
+              &::before {
+                content: "";
+                display: inline-block;
+                width: 6px;
+                height: 10px;
+                background-image: url("../img/news/arrow-next.svg");
+                background-repeat: no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: auto;
+    }
+    .swiper-slide {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+  }
+  .slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    @include min-media($bpoint-tab) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+    &--news {
+      @include min-media($bpoint-desk) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+
+    .article {
+      margin-bottom: $space-1;
+      border-radius: 6px;
+      overflow: hidden;
+      @include min-media($bpoint-tab) {
+        margin-left: $space-1;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      &--news:first-child {
+        @include max-media($bpoint-desk) {
+          margin-right: $space-3;
+        }
+        @media (max-width: 767px) {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          @include max-media($bpoint-desk) {
+            margin-left: $space-3;
+          }
+          @media (max-width: 767px) {
+            margin-left: 0;
+          }
+        }
+      }
+      &__hdr {
+        color: $color-9;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+        padding-bottom: $space-3;
+      }
+      &__img {
+        img {
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+      &__subtitle {
+        font-weight: $fw-bold;
+      }
+      &__txt {
+        font-family: $font-2;
+        font-size: $font-size-h4;
+        color: $color-2;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        max-height: 1.6 * 2;
+        &--news {
+          font-size: $font-size-h3;
+        }
+      }
+      &__timer {
+        color: $color-2;
+        font-size: $font-size-h4;
+
+        &__icon {
+          padding-right: $space-3 * 0.5;
+        }
+      }
+    }
+  }
+}
