@@ -2,135 +2,210 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  color: $color-5;
-  &__img {
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    overflow: hidden;
+  .banner-box {
     width: 100%;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(#000000, 0.2);
-    }
 
-    padding-bottom: 103.46%;
-    background-image: url("../img/hero/hero-375.png");
-    @include min-media($bpoint-tab) {
-      background-image: url("../img/hero/hero-768.png");
-      padding-bottom: 52%;
-    }
     @include min-media($bpoint-desk) {
-      background-image: url("../img/hero/hero-840.png");
       width: 58%;
-      padding-bottom: 41.666%;
     }
     @include min-media($bpoint-desklg) {
-      background-image: url("../img/hero/hero-1220.png");
       width: 68%;
-      padding-bottom: 33.333%;
     }
-  }
-  &__content {
-    position: absolute;
-    top: 0;
-    margin: $space-1 auto;
-    max-width: 600px;
-    @media (min-width: 433px) {
-      margin-top: $space-1 * 2;
-    }
-    @media (min-width: 500px) {
-      margin: $space-1 * 3 $space-1;
-    }
-    @media (min-width: 666px) {
-      margin: auto;
-      left: 0;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    @include min-media($bpoint-tab) {
-    }
-    @include min-media($bpoint-desk) {
-      left: -40%;
-    }
-    &__hdr {
-      font-weight: $fw-bold;
-    }
-    &__subtitle {
-      font-weight: $fw-bold;
-      margin-bottom: $space-3;
-    }
-    &__txt {
-      margin: 0 0 $space-3;
-      @media (min-width: 425px) {
-        margin-bottom: $space-1;
-      }
-      @media (min-width: 568px) {
-        margin-bottom: $space-1 * 2;
-      }
-    }
-  }
+    position: relative;
+    .banner {
+      max-height: 600px;
+      overflow: hidden;
+      &__content {
+        color: $color-5;
+        max-width: 600px;
+        padding-top: 11.67%;
+        padding-bottom: 11.67%;
 
-  .slider {
+        @include min-media($bpoint-tab) {
+          padding-top: 13.16%;
+          padding-bottom: 13.16%;
+        }
+        @include min-media($bpoint-desk) {
+          padding-top: 132.5px;
+          padding-bottom: 132.5px;
+        }
+        @include min-media($bpoint-desklg) {
+          padding-top: 132.5px;
+          padding-bottom: 132.5px;
+        }
+
+        &__hdr {
+          font-weight: $fw-bold;
+        }
+        &__subtitle {
+          font-weight: $fw-bold;
+          margin-bottom: $space-3;
+        }
+        &__txt {
+          margin: 0 0 $space-3;
+          @media (min-width: 425px) {
+            margin-bottom: $space-1;
+          }
+          @media (min-width: 568px) {
+            margin-bottom: $space-1 * 2;
+          }
+        }
+      }
+      &:before {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        // padding-bottom: 103.43%;
+        background-image: url("../img/hero/hero-375.png");
+        @include min-media($bpoint-tab) {
+          background-image: url("../img/hero/hero-768.png");
+          // padding-bottom: 52%;
+          // max-height: 400px;
+        }
+        @include min-media($bpoint-desk) {
+          background-image: url("../img/hero/hero-840.png");
+          // padding-bottom: auto;
+          // height: 600px;
+          // max-height: unset;
+        }
+        @include min-media($bpoint-desklg) {
+          background-image: url("../img/hero/hero-1220.png");
+        }
+      }
+      &::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background-color: rgba(#000000, 0.2);
+      }
+    }
+  }
+  .slider-box {
     width: 100%;
     height: auto;
-    color: $color-1;
-    background-color: red;
+    display: flex;
+    background-color: $white;
+
+    align-items: center;
     @include min-media($bpoint-desk) {
       width: 42%;
+      justify-content: center;
     }
     @include min-media($bpoint-desklg) {
       width: 32%;
     }
-    &__hdr {
-      display: flex;
-      flex-wrap: nowrap; /// ustawioc button i txt obok siebie
-      flex-direction: row;
-      &__txt {
-        font-weight: $fw-bold;
+    .slider {
+      width: 100%;
+      height: auto;
+      color: $color-1;
+      @include min-media($bpoint-desk) {
+        max-width: 380px;
+        .wrapper {
+          padding: 0;
+        }
       }
-      &__btn {
+
+      &__hdr {
+        width: 100%;
         display: flex;
-        .swiper-button {
-          &--next {
-            color: blue;
-          }
-          &--prev {
-            color: black;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        &__txt {
+          display: inline-block;
+          font-weight: $fw-bold;
+        }
+        &__btn {
+          display: inline-block;
+          fill: $color-11;
+
+          .swiper-button {
+            &--next,
+            &--prev {
+              display: inline-block;
+              &:hover {
+                fill: $color-1;
+              }
+            }
+            &--prev {
+              padding: 0 $space-1 0 0;
+            }
+            &--next {
+              padding: 0 0 0 $space-1;
+            }
           }
         }
       }
-    }
 
-    .swiper-container {
-      width: 100%;
-      height: auto;
+      .swiper-container {
+        width: 100%;
+        height: auto;
+      }
+      .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
     }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
+    .slide {
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
+      flex-direction: column;
+      @include min-media($bpoint-tab) {
+        // flex-direction: row;
+      }
+      .article {
+        margin-bottom: $space-1;
+        &__hdr {
+          color: $color-9;
+          font-weight: $fw-bold;
+          text-transform: uppercase;
+          padding-bottom: $space-3;
+        }
+        &__subtitle {
+          font-weight: $fw-bold;
+        }
+        &__txt {
+          color: $color-2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          max-height: 1.6 * 2;
+        }
+        &__timer {
+          color: $color-2;
+          &__icon {
+            padding-right: $space-3 * 0.5;
+          }
+        }
+      }
     }
   }
 }
