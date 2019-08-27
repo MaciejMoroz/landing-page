@@ -6,6 +6,10 @@
   }
   @include min-media($bpoint-desklg) {
     width: 68%;
+    .wrapper {
+      margin: 0 0 0;
+      max-width: 100%;
+    }
   }
   .banner-box {
     position: relative;
@@ -30,8 +34,7 @@
         @include min-media($bpoint-desklg) {
           padding-top: 132.5px;
           padding-bottom: 132.5px;
-          margin-left: calc(25vw - 150px);
-          margin-right: calc(25vw - 150px);
+          margin-left: calc(50vw - 580px); // 50vw-$cont-max-width(1160px)/2
         }
 
         &__hdr {

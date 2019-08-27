@@ -27,6 +27,9 @@
     height: auto;
     color: $color-1;
     &--news {
+      .component {
+        margin-bottom: 0;
+      }
       @include min-media($bpoint-desk) {
         max-width: 380px;
         .wrapper {
@@ -139,11 +142,13 @@
     .article {
       margin-bottom: $space-1;
       border-radius: 6px;
-      overflow: hidden;
-      @include min-media($bpoint-tab) {
-        margin-left: $space-1;
-        &:first-child {
-          margin-left: 0;
+      &--trending {
+        margin-bottom: $space-1;
+        @include min-media($bpoint-tab) {
+          margin-left: $space-1;
+          &:first-child {
+            margin-left: 0;
+          }
         }
       }
       &--news:first-child {
@@ -163,6 +168,9 @@
           }
         }
       }
+      &__content {
+        padding: $space-4;
+      }
       &__hdr {
         color: $color-9;
         font-weight: $fw-bold;
@@ -170,6 +178,7 @@
         padding-bottom: $space-3;
       }
       &__img {
+        width: 100%;
         img {
           width: 100%;
           overflow: hidden;
@@ -194,6 +203,9 @@
         }
       }
       &__timer {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: $space-2;
         color: $color-2;
         font-size: $font-size-h4;
 
