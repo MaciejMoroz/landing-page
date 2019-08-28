@@ -1,0 +1,43 @@
+.footer {
+  padding: 58px 0;
+  background-color: $color-2;
+  color: $color-12;
+  @include max-media($bpoint-tab) {
+    margin-top: $space-1 * 2;
+  }
+}
+.footer-box {
+  &__el {
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+      position: relative;
+      margin-right: $space-1 * 0.5;
+      margin-bottom: $space-1;
+    }
+    &__right {
+      margin-bottom: $space-1;
+      display: flex;
+      margin-left: $space-1 * 0.5;
+      .col {
+        padding-left: $space-3;
+      }
+    }
+  }
+}
+.header__logo--footer {
+  color: $color-5;
+}
+.subscription {
+  input,
+  label {
+    display: block;
+  }
+
+  &__submit-btn {
+    position: absolute;
+    top: $space-3 * 0.9;
+    right: $space-3;
+  }
+}

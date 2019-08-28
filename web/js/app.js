@@ -1,6 +1,9 @@
 const BODY = this.document.querySelector("body"),
   btn_menu = this.document.querySelector("[data-menu-btn]"),
-  coll = document.getElementsByClassName("colapse");
+  coll = this.document.getElementsByClassName("colapse"),
+  emailInput = this.document.querySelector('input[type="email"]'),
+  emailInput2 = this.document.getElementById("email");
+
 
 // hamburger menu
 btn_menu.onclick = function () {
@@ -42,4 +45,22 @@ window.onload = function () {
       prevEl: ".trending-btn-prev"
     }
   });
+  var cards = new Swiper(".cards-swiper", {
+    direction: "horizontal",
+    loop: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".cards-btn-next",
+      prevEl: ".cards-btn-prev"
+    }
+  });
 };
+
+emailInput2.addEventListener('click', function () {
+  console.log("SAdsad");
+
+});

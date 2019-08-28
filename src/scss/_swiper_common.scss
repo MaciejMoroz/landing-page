@@ -40,6 +40,7 @@
 
     &__hdr {
       width: 100%;
+      padding-bottom: $space-1;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -116,7 +117,9 @@
       align-items: center;
     }
   }
+  // ======================= slide =======================
   .slide {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -138,8 +141,13 @@
         flex-direction: column;
       }
     }
-
+    &--cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    // ======================= article =======================
     .article {
+      width: 100%;
       margin-bottom: $space-1;
       border-radius: 6px;
       &--trending {
@@ -168,51 +176,134 @@
           }
         }
       }
+      &--cards--big {
+        position: relative;
+      }
+      &--cards--sm {
+        margin-bottom: $space-1;
+        @include min-media($bpoint-tab) {
+          margin-left: $space-1;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        @include min-media($bpoint-desk) {
+          margin-left: 0;
+        }
+      }
+
       &__content {
         padding: $space-4;
-      }
-      &__hdr {
-        color: $color-9;
-        font-weight: $fw-bold;
-        text-transform: uppercase;
-        padding-bottom: $space-3;
-      }
-      &__img {
-        width: 100%;
-        img {
-          width: 100%;
-          overflow: hidden;
+        &--big {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          min-height: 300px;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
         }
-      }
-      &__subtitle {
-        font-weight: $fw-bold;
-      }
-      &__txt {
-        font-family: $font-2;
-        font-size: $font-size-h4;
-        color: $color-2;
-        overflow: hidden;
-        -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        max-height: 1.6 * 2;
-        &--news {
-          font-size: $font-size-h3;
-        }
-      }
-      &__timer {
-        display: flex;
-        flex-wrap: nowrap;
-        margin-top: $space-2;
-        color: $color-2;
-        font-size: $font-size-h4;
 
-        &__icon {
-          padding-right: $space-3 * 0.5;
+        &__hdr {
+          color: $color-9;
+          font-weight: $fw-bold;
+          text-transform: uppercase;
+          padding-bottom: $space-3;
+          &--big {
+            flex-grow: 2;
+            color: $color-5;
+          }
+        }
+        &__img {
+          img {
+            width: 100%;
+            overflow: hidden;
+          }
+          &--big {
+            min-height: 300px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+
+            img {
+              min-height: 300px;
+              height: auto;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        &__subtitle {
+          font-weight: $fw-bold;
+          &--big {
+            color: $color-5;
+          }
+        }
+        &__txt {
+          margin-bottom: $space-2;
+
+          font-family: $font-2;
+          font-size: $font-size-h4;
+          color: $color-2;
+          overflow: hidden;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          max-height: 1.6 * 2;
+          &--news {
+            font-size: $font-size-h3;
+          }
+          &--big {
+            color: $color-5;
+          }
+        }
+        &__timer {
+          display: flex;
+          flex-wrap: nowrap;
+          color: $color-2;
+          font-size: $font-size-h4;
+          &--big {
+            color: $color-5;
+            padding-bottom: $space-1;
+          }
+
+          &__icon {
+            padding-right: $space-3 * 0.5;
+          }
         }
       }
+    }
+  }
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  &--big {
+    width: 100%;
+    height: auto;
+    @include min-media($bpoint-desk) {
+      max-width: 760px;
+    }
+  }
+
+  &--sm {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 284px;
+    @include min-media($bpoint-tab) {
+      flex-direction: row;
+    }
+    @include min-media($bpoint-desk) {
+      flex-direction: column;
+      max-width: 360px;
+      margin-left: $space-1;
     }
   }
 }
