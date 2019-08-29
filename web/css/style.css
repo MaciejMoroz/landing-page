@@ -726,9 +726,9 @@ button {
         @media (min-width: 768px) {
           .sub-nav__el__second-lvl__el {
             margin-left: 60px;
-            width: 200px; }
-            .sub-nav__el__second-lvl__el:hover {
-              font-weight: 700; } }
+            width: 200px; } }
+        .sub-nav__el__second-lvl__el:hover {
+          font-weight: 700; }
     .sub-nav__el:hover {
       font-weight: 700; }
 

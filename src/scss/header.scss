@@ -211,9 +211,9 @@
         @include min-media($bpoint-tab) {
           margin-left: $space-1 * 1.5;
           width: 200px;
-          &:hover {
-            font-weight: $fw-bold;
-          }
+        }
+        &:hover {
+          font-weight: $fw-bold;
         }
       }
     }
