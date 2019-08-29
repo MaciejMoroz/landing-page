@@ -1,27 +1,82 @@
 .footer {
-  padding: 58px 0;
+  padding: $space-1 0;
   background-color: $color-2;
   color: $color-12;
   @include max-media($bpoint-tab) {
     margin-top: $space-1 * 2;
+    padding: $space-1 0;
   }
 }
 .footer-box {
+  @include min-media($bpoint-desk) {
+    display: flex;
+    justify-content: space-between;
+  }
   &__el {
+    &:first-child {
+      margin-bottom: $space-1;
+    }
     display: flex;
     justify-content: space-between;
 
-    &__left {
-      position: relative;
-      margin-right: $space-1 * 0.5;
+    @include min-media($bpoint-tab) {
       margin-bottom: $space-1;
     }
+    @include min-media($bpoint-desk) {
+      max-width: 50%;
+    }
+
+    &__left {
+      position: relative;
+      width: 50%;
+      margin-right: $space-1 * 0.5;
+    }
     &__right {
-      margin-bottom: $space-1;
       display: flex;
-      margin-left: $space-1 * 0.5;
+      justify-content: flex-end;
+      @include min-media($bpoint-tab) {
+        width: 50%;
+        margin-left: $space-1 * 0.5;
+      }
+      .social-icons {
+        display: flex;
+        align-items: flex-end;
+        a {
+          height: $space-3;
+          margin-right: $space-4;
+        }
+        @include min-media($bpoint-tab) {
+          margin: 0 16px 9px 0;
+          a {
+            margin-left: $space-4;
+          }
+        }
+        @include min-media($bpoint-desk) {
+          margin: 0 0 32px 0;
+        }
+      }
+      svg {
+        fill: $white;
+        -webkit-transition: -webkit-transform 0.5s
+          cubic-bezier(0.25, 1.66, 0.9, 3);
+        transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+        -o-transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+        transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+        transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3),
+          -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+        transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3),
+          -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+      }
+      a:hover {
+        svg {
+          fill: $color-1;
+          -webkit-transform: scale3d(1.5, 1.5, 1.5);
+          transform: scale3d(1.5);
+        }
+      }
       .col {
-        padding-left: $space-3;
+        width: 100%;
+        padding-right: $space-3;
       }
     }
   }
@@ -30,14 +85,30 @@
   color: $color-5;
 }
 .subscription {
-  input,
+  position: relative;
+  width: 284px;
+  @include min-media($bpoint-desk) {
+    // width: 260px;
+  }
+
   label {
+    font-size: $font-size-h5;
     display: block;
   }
 
+  .email-box,
   &__submit-btn {
+    cursor: pointer;
     position: absolute;
     top: $space-3 * 0.9;
     right: $space-3;
+  }
+  .email-box {
+    left: 0;
+  }
+  &__submit-btn {
+    transition: 1s;
+
+    fill: $white;
   }
 }
