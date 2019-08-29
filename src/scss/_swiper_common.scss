@@ -148,7 +148,7 @@
     // ======================= article =======================
     .article {
       width: 100%;
-      margin-bottom: $space-1;
+      // margin-bottom: $space-1;
       border-radius: 6px;
       &--trending {
         margin-bottom: $space-1;
@@ -178,9 +178,10 @@
       }
       &--cards--big {
         position: relative;
+        margin-bottom: $space-1;
       }
       &--cards--sm {
-        margin-bottom: $space-1;
+        // margin-bottom: $space-1;
         @include min-media($bpoint-tab) {
           margin-left: $space-1;
           &:first-child {
@@ -194,6 +195,9 @@
 
       &__content {
         padding: $space-4;
+        &--news {
+          padding: 0;
+        }
         &--big {
           position: absolute;
           display: flex;

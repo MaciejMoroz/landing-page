@@ -51,10 +51,8 @@
   position: absolute;
   top: 0;
   left: -350px;
-  width: 287px;
   min-width: 287px;
   height: auto;
-  min-height: 100vh;
   background-color: $color-4;
   -webkit-box-shadow: 20px 0 30px rgba($black, 0.6);
   box-shadow: 20px 0 30px rgba($black, 0.6);
@@ -69,13 +67,13 @@
   }
   @include min-media($bpoint-tab) {
     left: auto;
+    right: 40px;
+    width: auto;
     padding: 12px 0;
     min-height: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
     background-color: transparent; // unset - IE 11 error?
-    width: auto;
-    right: 40px;
   }
 
   &__logo {

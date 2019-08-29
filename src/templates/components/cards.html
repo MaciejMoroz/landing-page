@@ -9,11 +9,11 @@
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Previous slide</title>
                 <defs>
-                  <clipPath id="a">
+                  <clipPath id="previousSlideCards">
                     <rect width="6" height="10" fill="none" />
                   </clipPath>
                 </defs>
-                <g clip-path="url(#a)">
+                <g clip-path="url(#previousSlideCards)">
                   <path
                     d="M5,6a.908.908,0,0,1-.7-.3l-4-4A.967.967,0,0,1,.3.3.967.967,0,0,1,1.7.3L5,3.6,8.3.3A.967.967,0,0,1,9.7.3a.967.967,0,0,1,0,1.4l-4,4A.908.908,0,0,1,5,6Z"
                     transform="translate(6) rotate(90)"
@@ -26,11 +26,11 @@
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Next slide</title>
                 <defs>
-                  <clipPath id="a">
+                  <clipPath id="nexSlideCards">
                     <rect width="6" height="10" fill="none" />
                   </clipPath>
                 </defs>
-                <g clip-path="url(#a)">
+                <g clip-path="url(#nexSlideCards)">
                   <path
                     d="M5,6a.908.908,0,0,1-.7-.3l-4-4A.967.967,0,0,1,.3.3.967.967,0,0,1,1.7.3L5,3.6,8.3.3A.967.967,0,0,1,9.7.3a.967.967,0,0,1,0,1.4l-4,4A.908.908,0,0,1,5,6Z"
                     transform="translate(0 10) rotate(-90)"
@@ -46,7 +46,7 @@
               <div class="slide slide--cards">
                 <div class="box">
                   <div class="box--big">
-                    <article class="article article--cards--big bg--white">
+                    <div class="article article--cards--big">
                       <div
                         class="article__content__img article__content__img--big"
                       >
@@ -81,8 +81,8 @@
                           <span>2m <span>ago</span></span>
                         </div>
                       </div>
-                    </article>
-                    <article class="article article--cards--big bg--white">
+                    </div>
+                    <div class="article article--cards--big">
                       <div
                         class="article__content__img article__content__img--big"
                       >
@@ -117,11 +117,11 @@
                           <span>2m <span>ago</span></span>
                         </div>
                       </div>
-                    </article>
+                    </div>
                   </div>
 
                   <div class="box--sm">
-                    <article class="article article--cards--sm bg--white">
+                    <div class="article article--cards--sm">
                       <div class="article__content__img">
                         <img src="img/cards/3.svg" alt="article image" />
                       </div>
@@ -146,8 +146,8 @@
                           >
                         </div>
                       </div>
-                    </article>
-                    <article class="article article--cards--sm bg--white">
+                    </div>
+                    <div class="article article--cards--sm">
                       <div class="article__content__img">
                         <img src="img/cards/4.svg" alt="article image" />
                       </div>
@@ -173,10 +173,8 @@
                           >
                         </div>
                       </div>
-                    </article>
-                    <article
-                      class="article article--cards--sm bg--white hide-tab"
-                    >
+                    </div>
+                    <div class="article article--cards--sm hide-tab">
                       <div class="article__content__img">
                         <img src="img/cards/5.svg" alt="article image" />
                       </div>
@@ -201,7 +199,7 @@
                           >
                         </div>
                       </div>
-                    </article>
+                    </div>
                   </div>
                 </div>
               </div>

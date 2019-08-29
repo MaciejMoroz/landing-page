@@ -418,7 +418,6 @@ button {
           flex-wrap: wrap; }
     .slider-box .slide .article {
       width: 100%;
-      margin-bottom: 40px;
       border-radius: 6px; }
       .slider-box .slide .article--trending {
         margin-bottom: 40px; }
@@ -440,19 +439,20 @@ button {
         .slider-box .slide .article--news:first-child:last-child {
           margin-left: 0; } }
       .slider-box .slide .article--cards--big {
-        position: relative; }
-      .slider-box .slide .article--cards--sm {
+        position: relative;
         margin-bottom: 40px; }
-        @media (min-width: 768px) {
-          .slider-box .slide .article--cards--sm {
-            margin-left: 40px; }
-            .slider-box .slide .article--cards--sm:first-child {
-              margin-left: 0; } }
-        @media (min-width: 1440px) {
-          .slider-box .slide .article--cards--sm {
+      @media (min-width: 768px) {
+        .slider-box .slide .article--cards--sm {
+          margin-left: 40px; }
+          .slider-box .slide .article--cards--sm:first-child {
             margin-left: 0; } }
+      @media (min-width: 1440px) {
+        .slider-box .slide .article--cards--sm {
+          margin-left: 0; } }
       .slider-box .slide .article__content {
         padding: 23.04px; }
+        .slider-box .slide .article__content--news {
+          padding: 0; }
         .slider-box .slide .article__content--big {
           position: absolute;
           display: -webkit-box;
@@ -604,10 +604,8 @@ button {
   position: absolute;
   top: 0;
   left: -350px;
-  width: 287px;
   min-width: 287px;
   height: auto;
-  min-height: 100vh;
   background-color: #f6f8f9;
   -webkit-box-shadow: 20px 0 30px rgba(0, 0, 0, 0.6);
   box-shadow: 20px 0 30px rgba(0, 0, 0, 0.6);
@@ -620,13 +618,13 @@ button {
   @media (min-width: 768px) {
     .nav {
       left: auto;
+      right: 40px;
+      width: auto;
       padding: 12px 0;
       min-height: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
-      background-color: transparent;
-      width: auto;
-      right: 40px; } }
+      background-color: transparent; } }
   .nav__logo {
     margin: 40px;
     text-transform: uppercase;
