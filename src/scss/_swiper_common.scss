@@ -22,6 +22,7 @@
       width: 32%;
     }
   }
+
   .slider {
     width: 100%;
     height: auto;
@@ -88,6 +89,7 @@
       width: 100%;
       height: auto;
     }
+
     .swiper-slide {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -100,7 +102,7 @@
       align-items: center;
     }
   }
-  // ======================= slide =======================
+
   .slide {
     width: 100%;
     display: -webkit-box;
@@ -128,10 +130,9 @@
       display: flex;
       flex-wrap: wrap;
     }
-    // ======================= article =======================
+
     .article {
       width: 100%;
-      // margin-bottom: $space-1;
       border-radius: 6px;
       &--trending {
         margin-bottom: $space-1;
@@ -149,7 +150,6 @@
         @media (max-width: 767px) {
           margin-right: 0;
         }
-
         &:last-child {
           @include max-media($bpoint-desk) {
             margin-left: $space-3;
@@ -164,7 +164,6 @@
         margin-bottom: $space-1;
       }
       &--cards--sm {
-        // margin-bottom: $space-1;
         @include min-media($bpoint-tab) {
           margin-left: $space-1;
           &:first-child {
@@ -175,7 +174,6 @@
           margin-left: 0;
         }
       }
-
       &__content {
         padding: $space-4;
         &--news {
@@ -183,20 +181,19 @@
         }
         &--big {
           position: absolute;
-          display: flex;
-          flex-direction: column;
-          min-height: 300px;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
+          display: flex;
+          flex-direction: column;
+          min-height: 300px;
         }
-
         &__hdr {
+          padding-bottom: $space-3;
           color: $color-9;
           font-weight: $fw-bold;
           text-transform: uppercase;
-          padding-bottom: $space-3;
           &--big {
             flex-grow: 2;
             color: $color-5;
@@ -212,7 +209,6 @@
             width: 100%;
             height: auto;
             overflow: hidden;
-
             img {
               min-height: 300px;
               height: auto;
@@ -229,7 +225,7 @@
         }
         &__txt {
           margin-bottom: $space-2;
-
+          max-height: 1.6 * 2; // line-height * 2
           font-family: $font-2;
           font-size: $font-size-h4;
           color: $color-2;
@@ -239,7 +235,6 @@
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
-          max-height: 1.6 * 2;
           &--news {
             font-size: $font-size-h3;
           }
@@ -256,7 +251,6 @@
             color: $color-5;
             padding-bottom: $space-1;
           }
-
           &__icon {
             padding-right: $space-3 * 0.5;
           }

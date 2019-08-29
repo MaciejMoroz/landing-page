@@ -22,6 +22,9 @@ for (i = 0; i < coll.length; i++) {
   });
 
 }
+
+
+// swiper 
 window.onload = function () {
   var newsSwiper = new Swiper(".news-swiper", {
     direction: "horizontal",

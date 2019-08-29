@@ -25,7 +25,6 @@
   &__avatar {
     position: absolute;
     top: 13px;
-
     right: $base-unit;
     -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
     transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
@@ -47,6 +46,7 @@
     }
   }
 }
+
 .nav {
   position: absolute;
   top: 0;
@@ -162,7 +162,13 @@
   overflow: hidden;
   @include min-media($bpoint-tab) {
     position: absolute;
-
+    top: 30px;
+    border-radius: 0 0 6px 6px;
+    display: inline-block;
+    width: 200px;
+    -webkit-transition: height 1s ease;
+    -o-transition: height 1s ease;
+    transition: height 1s ease;
     @media all and (min--moz-device-pixel-ratio: 0) {
       top: 20px;
       left: 0;
@@ -171,13 +177,6 @@
       top: 20px;
       left: 0;
     }
-    top: 30px;
-    border-radius: 0 0 6px 6px;
-    display: inline-block;
-    width: 200px;
-    -webkit-transition: height 1s ease;
-    -o-transition: height 1s ease;
-    transition: height 1s ease;
     & .active {
       -webkit-transition: height 1s ease;
       -o-transition: height 1s ease;
@@ -196,7 +195,6 @@
 
   &__el {
     margin: $space-3 0 $space-3 $space-3 * 5;
-
     @include min-media($bpoint-tab) {
       padding: $space-3;
       margin: 0;
