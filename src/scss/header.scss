@@ -214,10 +214,12 @@
         }
         &:hover {
           font-weight: $fw-bold;
+          cursor: pointer;
         }
       }
     }
     &:hover {
+      cursor: pointer;
       font-weight: $fw-bold;
     }
   }

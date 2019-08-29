@@ -12,6 +12,7 @@ form_req = document.querySelectorAll("[required]"),
 btn_menu.onclick = function () {
   BODY.classList.toggle('open-menu')
 }
+// colapse menu
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     const content = this.nextElementSibling;

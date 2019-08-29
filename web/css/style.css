@@ -728,8 +728,10 @@ button {
             margin-left: 60px;
             width: 200px; } }
         .sub-nav__el__second-lvl__el:hover {
-          font-weight: 700; }
+          font-weight: 700;
+          cursor: pointer; }
     .sub-nav__el:hover {
+      cursor: pointer;
       font-weight: 700; }
 
 .active {
