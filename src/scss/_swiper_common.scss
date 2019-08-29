@@ -27,6 +27,13 @@
     height: auto;
     color: $color-1;
     &--news {
+      margin-bottom: $space-1;
+      @include min-media($bpoint-tab) {
+        margin-bottom: $space-1 * 2;
+      }
+      @include min-media($bpoint-desk) {
+        margin-bottom: 0;
+      }
       .component {
         margin-bottom: 0;
       }
@@ -69,33 +76,9 @@
           }
           &--prev {
             padding: 0 $space-1 0 0;
-            @media all and (-ms-high-contrast: none),
-              (-ms-high-contrast: active) {
-              //  IE10+ CSS styles
-              &::before {
-                content: "";
-                display: inline-block;
-                width: 6px;
-                height: 10px;
-                background-image: url("../img/news/arrow-prev.svg");
-                background-repeat: no-repeat;
-              }
-            }
           }
           &--next {
             padding: 0 0 0 $space-1;
-            @media all and (-ms-high-contrast: none),
-              (-ms-high-contrast: active) {
-              //  IE10+ CSS styles
-              &::before {
-                content: "";
-                display: inline-block;
-                width: 6px;
-                height: 10px;
-                background-image: url("../img/news/arrow-next.svg");
-                background-repeat: no-repeat;
-              }
-            }
           }
         }
       }

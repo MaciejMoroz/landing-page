@@ -89,7 +89,7 @@
   &__el {
     position: relative;
     @include min-media($bpoint-tab) {
-      margin: 0 $space-3 0 0;
+      margin: 0 $space-4 0 0;
       float: left;
       height: 50px;
     }
