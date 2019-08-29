@@ -254,16 +254,16 @@ button {
   display: none; }
   @media (min-width: 768px) {
     .hide-mob {
-      display: unset; } }
+      display: block; } }
 
 .hide-tab {
   display: none; }
   @media (min-width: 1440px) {
     .hide-tab {
-      display: unset; } }
+      display: block; } }
 
 .hide-footer {
-  display: unset; }
+  display: block; }
   @media (min-width: 768px) {
     .hide-footer {
       display: none; } }
@@ -271,7 +271,7 @@ button {
     display: none; }
     @media (min-width: 768px) {
       .hide-footer--onMob {
-        display: unset; } }
+        display: block; } }
 
 .line {
   display: inline-block;
@@ -641,7 +641,8 @@ button {
     @media (min-width: 768px) {
       .nav__el {
         margin: 0 16px 0 0;
-        float: left; } }
+        float: left;
+        height: 50px; } }
     .nav__el__txt, .nav__el__icon {
       display: inline-block;
       cursor: pointer; }
@@ -692,11 +693,12 @@ button {
       display: inline-block;
       width: 200px;
       -webkit-transition: height 1s ease;
-      transition: height 1s ease; }
-    @-moz-document url-prefix() {
-      .sub-nav {
-        top: 20px;
-        left: 0; } }
+      transition: height 1s ease; } }
+  @media all and (min-width: 768px) and (min--moz-device-pixel-ratio: 0) {
+    .sub-nav {
+      top: 20px;
+      left: 0; } }
+  @media (min-width: 768px) {
       @supports (-ms-ime-align: auto) {
         .sub-nav {
           top: 20px;
@@ -878,16 +880,16 @@ button {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; } }
+    -ms-flex-pack: justify;
+    justify-content: space-between; } }
 
 .footer-box__el {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
   .footer-box__el:first-child {
     margin-bottom: 40px; }
   @media (min-width: 768px) {
@@ -905,8 +907,8 @@ button {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
     @media (min-width: 768px) {
       .footer-box__el__right {
         width: 50%;
@@ -916,8 +918,8 @@ button {
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: end;
-          -ms-flex-align: end;
-              align-items: flex-end; }
+      -ms-flex-align: end;
+      align-items: flex-end; }
       .footer-box__el__right .social-icons a {
         height: 16px;
         margin-right: 23.04px; }
@@ -933,7 +935,9 @@ button {
       fill: #fff;
       -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
       transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
       transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+      transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3), -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
       transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3), -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
       transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3), -webkit-transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3); }
     .footer-box__el__right a:hover svg {

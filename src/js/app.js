@@ -95,26 +95,21 @@ form_el.onsubmit = function (event) {
     console.log("valid err");
   }
 };
-// fill hidden input for validation
+// // fill hidden input for validation
 emailInputs[1].addEventListener('change', function () {
   emailInputs[0].value = emailInputs[1].value;
 })
 
 
-// submit btn color animation
-emailInputs.forEach(e => e.addEventListener('focus', function () {
-  submitBtn.style.fill = "#000"
-}));
+// // submit btn color animation
+emailInputs.forEach(function (e) {
+  return e.addEventListener('focus', function () {
+    submitBtn.style.fill = "#000";
+  });
+});
+emailInputs.forEach(function (e) {
+  return e.addEventListener('blur', function () {
+    submitBtn.style.fill = "";
+  });
+});
 
-emailInputs.forEach(e => e.addEventListener('blur', function () {
-  submitBtn.style.fill = ""
-}));
-
-// emailInput.addEventListener('focus', function () {
-//   submitBtn.style.fill = "#000"
-// })
-
-// emailInput.addEventListener('blur', function () {
-//   submitBtn.style.fill = ""
-
-// })

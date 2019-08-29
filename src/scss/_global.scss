@@ -214,24 +214,24 @@ button {
 .hide-mob {
   display: none;
   @include min-media($bpoint-tab) {
-    display: unset;
+    display: block;
   }
 }
 .hide-tab {
   display: none;
   @include min-media($bpoint-desk) {
-    display: unset;
+    display: block;
   }
 }
 .hide-footer {
-  display: unset;
+  display: block;
   @include min-media($bpoint-tab) {
     display: none;
   }
   &--onMob {
     display: none;
     @include min-media($bpoint-tab) {
-      display: unset;
+      display: block;
     }
   }
 }

@@ -93,6 +93,7 @@
     @include min-media($bpoint-tab) {
       margin: 0 $space-3 0 0;
       float: left;
+      height: 50px;
     }
     &__txt,
     &__icon {
@@ -164,7 +165,7 @@
   @include min-media($bpoint-tab) {
     position: absolute;
 
-    @-moz-document url-prefix() {
+    @media all and (min--moz-device-pixel-ratio: 0) {
       top: 20px;
       left: 0;
     }
