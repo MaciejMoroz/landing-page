@@ -226,7 +226,7 @@ button {
 .hide-footer {
   display: block;
   @include min-media($bpoint-tab) {
-    display: none;
+    display: none; // nie wyswietla socialmedia ikon na IE 11 przy kazdym widoku
   }
   &--onMob {
     display: none;

@@ -69,15 +69,15 @@
         overflow: hidden;
         width: 100%;
         height: 100%;
-        background-image: url("../img/hero/hero-375.png");
+        background-image: url("/img/hero/hero-375.png");
         @include min-media($bpoint-tab) {
-          background-image: url("../img/hero/hero-768.png");
+          background-image: url("/img/hero/hero-768.png");
         }
         @include min-media($bpoint-desk) {
-          background-image: url("../img/hero/hero-840.png");
+          background-image: url("/img/hero/hero-840.png");
         }
         @include min-media($bpoint-desklg) {
-          background-image: url("../img/hero/hero-1220.png");
+          background-image: url("/img/hero/hero-1220.png");
         }
       }
       &::after {

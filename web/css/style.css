@@ -844,16 +844,16 @@ button {
         overflow: hidden;
         width: 100%;
         height: 100%;
-        background-image: url("../img/hero/hero-375.png"); }
+        background-image: url("/img/hero/hero-375.png"); }
         @media (min-width: 768px) {
           .hero .banner-box .banner:before {
-            background-image: url("../img/hero/hero-768.png"); } }
+            background-image: url("/img/hero/hero-768.png"); } }
         @media (min-width: 1440px) {
           .hero .banner-box .banner:before {
-            background-image: url("../img/hero/hero-840.png"); } }
+            background-image: url("/img/hero/hero-840.png"); } }
         @media (min-width: 1800px) {
           .hero .banner-box .banner:before {
-            background-image: url("../img/hero/hero-1220.png"); } }
+            background-image: url("/img/hero/hero-1220.png"); } }
       .hero .banner-box .banner::after {
         z-index: -1;
         content: "";
