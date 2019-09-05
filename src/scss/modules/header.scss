@@ -1,0 +1,237 @@
+.header {
+  position: relative;
+  width: 100%;
+  min-width: $cont-min-width;
+  height: 50px;
+  background-color: $color-4;
+  z-index: 9999;
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $font-size-h4;
+    color: $color-9;
+    font-weight: $fw-bold;
+    @include min-media($bpoint-tab) {
+      left: $space-1;
+    }
+  }
+  &__avatar {
+    position: absolute;
+    top: 13px;
+    right: $base-unit;
+    transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+    &:hover {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5);
+    }
+
+    img {
+      width: $base-unit;
+      height: $base-unit;
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: -350px;
+  min-width: 287px;
+  height: auto;
+  background-color: $color-4;
+  box-shadow: 20px 0 30px rgba($black, 0.6);
+  transition: 0.3s;
+  .open-menu & {
+    left: 0;
+    transition: 0.3s;
+  }
+  @include min-media($bpoint-tab) {
+    left: auto;
+    right: 40px;
+    width: auto;
+    padding: 12px 0;
+    min-height: 0;
+    box-shadow: none;
+    background-color: transparent; // unset - IE 11 error?
+  }
+
+  &__logo {
+    margin: $space-1;
+    text-transform: uppercase;
+    font-size: $font-size-h4;
+    color: $color-9;
+    font-weight: $fw-bold;
+    @include min-media($bpoint-tab) {
+      display: none;
+    }
+  }
+  &__el {
+    position: relative;
+    @include min-media($bpoint-tab) {
+      margin: 0 $space-4 0 0;
+      float: left;
+      height: 50px;
+    }
+    &__txt,
+    &__icon {
+      display: inline-block;
+      cursor: pointer;
+    }
+    &__txt {
+      text-transform: uppercase;
+      font-size: $font-size-h4;
+    }
+    &__icon {
+      width: $base-unit;
+      height: $base-unit;
+      margin: $space-1 $space-3 0 $space-1;
+      svg {
+        fill: $color-11;
+        fill-rule: evenodd;
+      }
+      @include min-media($bpoint-tab) {
+        display: none;
+      }
+
+      &--avatar {
+        border-radius: 50%;
+        transition: transform 0.5s cubic-bezier(0.25, 1.66, 0.9, 3);
+      }
+    }
+    &--avatar {
+      @include min-media($bpoint-tab) {
+        .nav__el__txt {
+          display: none;
+        }
+      }
+    }
+    &:hover {
+      .sub-nav {
+        min-height: 100px;
+        height: auto;
+        transition: height 1s ease;
+      }
+      .nav__el__txt {
+        font-weight: $fw-bold;
+      }
+      .nav__el__icon {
+        svg {
+          fill: $color-1;
+        }
+      }
+    }
+  }
+}
+.sub-nav {
+  display: block;
+  height: 0px;
+  overflow: hidden;
+  @include min-media($bpoint-tab) {
+    position: absolute;
+    top: 30px;
+    border-radius: 0 0 6px 6px;
+    display: inline-block;
+    width: 200px;
+    transition: height 1s ease;
+    @media all and (min--moz-device-pixel-ratio: 0) {
+      top: 20px;
+      left: 0;
+    }
+    @supports (-ms-ime-align: auto) {
+      top: 20px;
+      left: 0;
+    }
+    & .active {
+      transition: height 1s ease;
+    }
+  }
+  &__mask {
+    @include min-media($bpoint-tab) {
+      width: 200px;
+      min-height: 200px;
+      height: auto;
+      background-color: $color-4;
+      z-index: 9999999;
+    }
+  }
+
+  &__el {
+    margin: $space-3 0 $space-3 $space-3 * 5;
+    @include min-media($bpoint-tab) {
+      padding: $space-3;
+      margin: 0;
+      background-color: $color-4;
+    }
+    &__second-lvl {
+      height: 0px;
+      overflow: hidden;
+
+      &__el {
+        margin: 0 0 $space-3 $space-3 * 6;
+        @include min-media($bpoint-tab) {
+          margin-left: $space-1 * 1.5;
+          width: 200px;
+        }
+        &:hover {
+          font-weight: $fw-bold;
+          cursor: pointer;
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      font-weight: $fw-bold;
+    }
+  }
+}
+.active {
+  height: 100%;
+  transition: height 1s ease;
+
+  @include min-media($bpoint-tab) {
+    min-height: 100px;
+    height: auto;
+    margin-left: -$base-unit;
+    width: 200px;
+  }
+}
+.hamburger {
+  position: absolute;
+  top: 13px;
+  left: $base-unit;
+  width: $space-1;
+  height: $space-1;
+  cursor: pointer;
+  @media (min-width: $bpoint-tab) {
+    display: none;
+  }
+  span {
+    display: block;
+    background-color: $black;
+    width: $base-unit;
+    height: 2px;
+    margin: 3px;
+    transition: 0.3s;
+
+    &:nth-child(2) {
+      width: $base-unit * 0.6875;
+      transition: 0.1s;
+    }
+    .open-menu &:nth-child(2) {
+      visibility: hidden;
+    }
+    .open-menu &:nth-child(1) {
+      transform: rotate(45deg) translate(0, 7px);
+      transition: 0.3s;
+    }
+    .open-menu &:nth-child(3) {
+      transform: rotate(-45deg) translate(0, -7px);
+      transition: 0.3s;
+    }
+  }
+}

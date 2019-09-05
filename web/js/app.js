@@ -1,111 +1,85 @@
-const BODY = this.document.querySelector("body"),
-  btn_menu = this.document.querySelector("[data-menu-btn]"),
-  coll = this.document.getElementsByClassName("colapse"),
-  emailInputs = document.querySelectorAll(".subscription__email")
-form_req = document.querySelectorAll("[required]"),
-  form_el = document.querySelectorAll("form")[1],
-  submitBtn = document.querySelectorAll(".subscription__submit-btn")[1]
+"use strict";
 
+var _this = void 0;
 
+var BODY = document.querySelector("body"),
+    btn_menu = document.querySelector("[data-menu-btn]"),
+    coll = document.getElementsByClassName(" js-colapse"),
+    emailInputs = document.querySelectorAll(".js-validation-input"),
+    form_req = document.querySelectorAll("[required]"),
+    form_el = document.querySelectorAll("form")[1],
+    submitBtn = document.querySelectorAll(".js-submit-btn")[1]; // hamburger menu
 
-// hamburger menu
 btn_menu.onclick = function () {
-  BODY.classList.toggle('open-menu')
-}
-// colapse menu
-for (i = 0; i < coll.length; i++) {
+  BODY.classList.toggle('open-menu');
+}; // colapse menu
+
+
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
-    const content = this.nextElementSibling;
+    var content = _this.nextElementSibling;
+
     if (content.clientHeight = "0px") {
       content.classList.toggle("active");
     }
   });
+} // swiper 
 
-}
 
-
-// swiper 
 window.onload = function () {
-  var newsSwiper = new Swiper(".news-swiper", {
-    direction: "horizontal",
-    loop: true,
+  var swipers = [".news-swiper", ".trending-swiper", ".cards-swiper"];
 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".news-btn-next",
-      prevEl: ".news-btn-prev"
-    }
-  });
-  var trendingSwiper = new Swiper(".trending-swiper", {
-    direction: "horizontal",
-    loop: true,
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".trending-btn-next",
-      prevEl: ".trending-btn-prev"
-    }
-  });
-  var cards = new Swiper(".cards-swiper", {
-    direction: "horizontal",
-    loop: true,
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".cards-btn-next",
-      prevEl: ".cards-btn-prev"
-    }
-  });
-};
+  for (var _i = 0; _i < swipers.length; _i++) {
+    new Swiper(swipers[_i], {
+      direction: "horizontal",
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: swipers[_i] + "-next",
+        prevEl: swipers[_i] + "-prev"
+      }
+    });
+  }
+}; //form submit
 
 
-//form submit
 form_el.onsubmit = function (event) {
-  console.log();
-
   event.preventDefault();
   form_el.classList.add("is-submitted");
-  let isError = false;
+  var isError = false;
 
-  for (i = 0; i < form_req.length; i++) {
-    if (form_req[i].checkValidity() != true) {
+  for (var _i2 = 0; _i2 < form_req.length; _i2++) {
+    if (form_req[_i2].checkValidity() != true) {
       isError = true;
     }
   }
+
   if (!isError) {
-    let xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let data = {
+      if (_this.readyState == 4 && _this.status == 200) {
+        var data = {
           email: emailInputs[1].value
         };
-        console.log(data);
         form_el.classList.remove("is-submitted");
         form_el.reset();
       }
     };
+
     xhttp.open("POST", "https://httpstat.us/200", true);
     xhttp.send(new FormData(form_el));
-  } else {
-    console.log("valid err");
   }
-};
-// // fill hidden input for validation
+}; // // fill hidden input for validation
+
+
 emailInputs[1].addEventListener('change', function () {
   emailInputs[0].value = emailInputs[1].value;
-})
+}); // // submit btn color animation
 
-
-// // submit btn color animation
 emailInputs.forEach(function (e) {
   return e.addEventListener('focus', function () {
     submitBtn.style.fill = "#000";
@@ -116,4 +90,3 @@ emailInputs.forEach(function (e) {
     submitBtn.style.fill = "";
   });
 });
-

@@ -2,13 +2,14 @@
 @import url("https://use.typekit.net/oao6tdr.css");
 
 // global
-@import "_reset.scss";
-@import "_variables.scss";
-@import "_mixins.scss";
-@import "_global.scss";
-@import "swiper_common.scss";
+@import "base/reset.scss";
+@import "base/variables.scss";
+@import "base/_mixins.scss";
+@import "base/_global.scss";
+@import "vendor/swiper.min.scss";
+@import "base/_swiper_common.scss";
 
 // modules
-@import "./header.scss";
-@import "./hero.scss";
-@import "./footer.scss";
+@import "modules/header.scss";
+@import "modules/hero.scss";
+@import "modules/footer.scss";

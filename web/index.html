@@ -11,17 +11,13 @@
 
     <title>Some Title</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
-    />
   </head>
 
   <body>
     <header class="header">
   <div class="header__logo"><a href="#">Logo</a></div>
   <div class="header__avatar">
-    <img src="img/header/avatar.png" alt="avatar icon" />
+    <img src="img/avatars/avatar.png" alt="avatar icon" />
   </div>
 
   <div class="nav">
@@ -71,7 +67,7 @@
           <div class="sub-nav__mask">
             <ul>
               <li>
-                <div class="sub-nav__el colapse">
+                <div class="sub-nav__el js-colapse">
                   Item 1
                 </div>
 
@@ -89,7 +85,7 @@
               </li>
 
               <li>
-                <div class="sub-nav__el colapse">
+                <div class="sub-nav__el js-colapse">
                   Item 2
                 </div>
                 <ul class="sub-nav__el__second-lvl">
@@ -105,7 +101,7 @@
                 </ul>
               </li>
               <li>
-                <div class="sub-nav__el colapse">
+                <div class="sub-nav__el js-colapse">
                   Item 3
                 </div>
                 <ul class="sub-nav__el__second-lvl">
@@ -167,7 +163,7 @@
       <li class="nav__el nav__el--avatar hide-tab">
         <a href="#">
           <div class="nav__el__icon nav__el__icon--avatar ">
-            <img src="img/header/avatar.png" alt="avatar icon" />
+            <img src="img/avatars/avatar.png" alt="avatar icon" />
           </div>
           <span class="nav__el__txt">Profile</span>
         </a>
@@ -207,7 +203,7 @@
             <form novalidate>
               <div class="email-box">
                 <input
-                  class="input input--subscription subscription__email"
+                  class="input input--subscription subscription__email js-validation-input"
                   type="email"
                   name="subscription-email"
                   id="email"
@@ -221,7 +217,7 @@
 
                 <span class="form-error-msg">Wrong email</span>
                 <button
-                  class="subscription__submit-btn"
+                  class="subscription__submit-btn js-submit-btn"
                   type="submit"
                   id="submitBtn"
                 >
@@ -402,7 +398,7 @@
         <div class="slider__hdr">
           <h2 class="slider__hdr__txt">more news</h2>
           <div class="slider__hdr__btn">
-            <div class="swiper-button--prev news-btn-prev">
+            <div class="swiper-button--prev news-swiper-prev">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Previous slide</title>
                 <defs>
@@ -419,7 +415,7 @@
               </svg>
             </div>
 
-            <div class="swiper-button--next news-btn-next">
+            <div class="swiper-button--next news-swiper-next">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Next slide</title>
                 <defs>
@@ -457,7 +453,7 @@
                     <div class="article__content__timer">
                       <img
                         class="article__content__timer__icon"
-                        src="img/hero/time.svg"
+                        src="img/svg/time.svg"
                         alt="time icon"
                       />
                       <span>2m <span>ago</span></span>
@@ -479,7 +475,7 @@
                     <div class="article__content__timer">
                       <img
                         class="article__content__timer__icon"
-                        src="img/hero/time.svg"
+                        src="img/svg/time.svg"
                         alt="time icon"
                       />
                       <span>2m <span>ago</span></span>
@@ -503,7 +499,7 @@
         <div class="slider__hdr">
           <h2 class="slider__hdr__txt">trending</h2>
           <div class="slider__hdr__btn">
-            <div class="swiper-button--prev trending-btn-prev">
+            <div class="swiper-button--prev trending-swiper-prev">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Previous slide</title>
                 <defs>
@@ -520,7 +516,7 @@
               </svg>
             </div>
 
-            <div class="swiper-button--next trending-btn-next">
+            <div class="swiper-button--next trending-swiper-next">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Next slide</title>
                 <defs>
@@ -544,7 +540,7 @@
               <div class="slide">
                 <div class="article article--trending bg--white">
                   <div class="article__content__img">
-                    <img src="img/trending/1.svg" alt="article image" />
+                    <img src="img/article/6.png" alt="article image" />
                   </div>
                   <div class="article__content">
                     <h3 class="article__content__subtitle">
@@ -557,7 +553,7 @@
                     <div class="article__content__timer">
                       <img
                         class="article__content__timer__icon"
-                        src="img/hero/time.svg"
+                        src="img/svg/time.svg"
                         alt="time icon"
                       />
                       <span>2m <span>ago</span></span>
@@ -566,7 +562,7 @@
                 </div>
                 <div class="article article--trending bg--white">
                   <div class="article__content__img">
-                    <img src="img/trending/2.svg" alt="article image" />
+                    <img src="img/article/7.png" alt="article image" />
                   </div>
                   <div class="article__content">
                     <div class="article__content__subtitle">
@@ -579,7 +575,7 @@
                     <div class="article__content__timer">
                       <img
                         class="article__content__timer__icon"
-                        src="img/hero/time.svg"
+                        src="img/svg/time.svg"
                         alt="time icon"
                       />
 
@@ -589,7 +585,7 @@
                 </div>
                 <div class="article article--trending bg--white hide-tab">
                   <div class="article__content__img">
-                    <img src="img/trending/3.svg" alt="article image" />
+                    <img src="img/article/8.png" alt="article image" />
                   </div>
                   <div class="article__content">
                     <h3 class="article__content__subtitle">
@@ -602,7 +598,7 @@
                     <div class="article__content__timer">
                       <img
                         class="article__content__timer__icon"
-                        src="img/hero/time.svg"
+                        src="img/svg/time.svg"
                         alt="time icon"
                       />
 
@@ -625,7 +621,7 @@
         <div class="slider__hdr">
           <h2 class="slider__hdr__txt">HAPPENING NOW</h2>
           <div class="slider__hdr__btn">
-            <div class="swiper-button--prev cards-btn-prev">
+            <div class="swiper-button--prev cards-swiper-prev">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Previous slide</title>
                 <defs>
@@ -642,7 +638,7 @@
               </svg>
             </div>
 
-            <div class="swiper-button--next cards-btn-next">
+            <div class="swiper-button--next cards-swiper-next">
               <svg width="6" height="10" viewBox="0 0 6 10">
                 <title>Next slide</title>
                 <defs>
@@ -670,7 +666,7 @@
                       <div
                         class="article__content__img article__content__img--big"
                       >
-                        <img src="img/cards/1.svg" alt="article image" />
+                        <img src="img/article/1.png" alt="article image" />
                       </div>
 
                       <div class="article__content article__content--big">
@@ -695,7 +691,7 @@
                         >
                           <img
                             class="article__content__timer__icon"
-                            src="img/hero/time.svg"
+                            src="img/svg/time.svg"
                             alt="time icon"
                           />
                           <span>2m <span>ago</span></span>
@@ -706,7 +702,7 @@
                       <div
                         class="article__content__img article__content__img--big"
                       >
-                        <img src="img/cards/2.svg" alt="article image" />
+                        <img src="img/article/2.png" alt="article image" />
                       </div>
 
                       <div class="article__content article__content--big">
@@ -731,7 +727,7 @@
                         >
                           <img
                             class="article__content__timer__icon"
-                            src="img/hero/time.svg"
+                            src="img/svg/time.svg"
                             alt="time icon"
                           />
                           <span>2m <span>ago</span></span>
@@ -743,7 +739,7 @@
                   <div class="box--sm">
                     <div class="article article--cards--sm">
                       <div class="article__content__img">
-                        <img src="img/cards/3.svg" alt="article image" />
+                        <img src="img/article/3.png" alt="article image" />
                       </div>
                       <div class="article__content">
                         <h3 class="article__content__subtitle">
@@ -753,7 +749,7 @@
                         <div class="article__content__timer">
                           <img
                             class="article__content__timer__icon"
-                            src="img/hero/time.svg"
+                            src="img/svg/time.svg"
                             alt="time icon"
                           />
                           <span
@@ -769,7 +765,7 @@
                     </div>
                     <div class="article article--cards--sm">
                       <div class="article__content__img">
-                        <img src="img/cards/4.svg" alt="article image" />
+                        <img src="img/article/4.png" alt="article image" />
                       </div>
                       <div class="article__content">
                         <div class="article__content__subtitle">
@@ -779,7 +775,7 @@
                         <div class="article__content__timer">
                           <img
                             class="article__content__timer__icon"
-                            src="img/hero/time.svg"
+                            src="img/svg/time.svg"
                             alt="time icon"
                           />
 
@@ -796,7 +792,7 @@
                     </div>
                     <div class="article article--cards--sm hide-tab">
                       <div class="article__content__img">
-                        <img src="img/cards/5.svg" alt="article image" />
+                        <img src="img/article/5.png" alt="article image" />
                       </div>
                       <div class="article__content">
                         <h3 class="article__content__subtitle">
@@ -806,7 +802,7 @@
                         <div class="article__content__timer">
                           <img
                             class="article__content__timer__icon"
-                            src="img/hero/time.svg"
+                            src="img/svg/time.svg"
                             alt="time icon"
                           />
                           <span
@@ -865,7 +861,7 @@
             <form novalidate>
               <div class="email-box">
                 <input
-                  class="input input--subscription subscription__email"
+                  class="input input--subscription subscription__email js-validation-input"
                   type="email"
                   name="subscription-email"
                   id="email"
@@ -879,7 +875,7 @@
 
                 <span class="form-error-msg">Wrong email</span>
                 <button
-                  class="subscription__submit-btn"
+                  class="subscription__submit-btn js-submit-btn"
                   type="submit"
                   id="submitBtn"
                 >
